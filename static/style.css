@@ -1,0 +1,111 @@
+body{
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(245,243,255);
+    color:rgb(23,20,33);
+}
+
+h1{
+    color: rgb(109,40,217);
+    font-size: 36px;
+}
+
+p{
+    font-size: 16px;
+    color: rgb(91,85,105);
+    line-height: 1.6;
+}
+
+main{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h2{
+    color: rgb(23,20,33);
+    font-size: 24px;
+}
+
+section{
+    background-color: white;
+    padding: 30px;
+    border: 1px solid rgb(221,214,254);
+    border-radius: 12px;
+}
+
+textarea{
+    width: 100%;
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border: 1px solid rgb(196,181,253);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+button{
+    background-color: rgb(109,40,217);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(91,33,182);
+    transition:background-color 0.3s ease;
+}
+
+input[type="file"]::file-selector-button{
+    background-color: rgb(237,233,254);
+    color: rgb(91,33,182);
+    padding:8px 14px;
+    border: 1px solid rgb(196,181,253);
+    border-radius: 6px;
+    margin-right: 12px;
+    cursor:pointer;
+}
+input[type="file"]::file-selector-button:hover{
+    background-color: rgb(221,214,254);
+    transition: background-color 0.3s ease;
+}
+
+.success-card{
+    max-width: 550px;
+    margin: 80px auto;
+    padding: 40px;
+    text-align: center;
+}
+
+.success-icon{
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background-color: rgb(237,233,254);
+    color: rgb(109,40,217);
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-card a{
+    display: inline-block;
+    margin-top: 20px;
+    background-color: rgb(109,40,217);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.success-card a:hover{
+    background-color: rgb(91,33,182);
+}
