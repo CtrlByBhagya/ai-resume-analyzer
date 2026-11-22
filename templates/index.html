@@ -12,7 +12,9 @@
 <body>
     <main>
         <h1>AI Resume Analyzer</h1>
-
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
         <p>Welcome! let's analyze your resume.</p>
 
         <section>

@@ -109,3 +109,11 @@ input[type="file"]::file-selector-button:hover{
 .success-card a:hover{
     background-color: rgb(91,33,182);
 }
+
+.error{
+    color: rgb(185,28,28);
+    background-color: rgb(254,226,226);
+    border: 1px solid rgb(252,165,165);
+    padding:12px;
+    border-radius: 8px;
+}

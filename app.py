@@ -1,3 +1,4 @@
+from pathlib import Path
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -9,7 +10,26 @@ def home():
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
+
+    resume = request.files.get("resume")
+    job_description = request.form.get("job_description","").strip()
+
+
+    if resume is None or resume.filename =="":
+        return render_template("index.html",error="Please upload a resume.")
+
+    if Path(resume.filename).suffix.lower() not in {".pdf", ".docx"}:
+        return render_template(
+            "index.html",
+            error="Only PDF or DOCX files are allowed."
+        )
+
+    if not job_description:
+        error_message = "Please enter a job description."
+        return render_template("index.html", error=error_message)
+
     return render_template("success.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
