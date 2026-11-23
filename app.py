@@ -1,5 +1,6 @@
 from pathlib import Path
 from flask import Flask, render_template, request
+from analyzer import run_analysis
 
 app = Flask(__name__)
 
@@ -28,7 +29,9 @@ def analyze():
         error_message = "Please enter a job description."
         return render_template("index.html", error=error_message)
 
-    return render_template("success.html")
+    result = run_analysis(resume, job_description)
+
+    return render_template("results.html", result=result)
 
 
 if __name__ == "__main__":

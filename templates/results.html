@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Analysis Results | AI Resume Analyzer</title>
+
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    </head>
+
+    <body>
+        <main>
+            <h1>Resume Analysis Results</h1>
+            <section>
+                <h2>Match Score</h2>
+
+                <!--look for the variable named result that flask passed to this template-->
+                <!--it access its score value and display that value in the HTML-->
+                <p>{{result.score}}%</p>
+            </section>
+
+            <section>
+                <h2>Matched Skills</h2>
+
+                <!--jinja2 for loops-->
+                <ul>
+                    {% for skill in result.matched %}
+                        <li>{{skill}}</li>
+                    {% else %}
+                        <li>No matching skills found.</li>
+                    {% endfor %}
+                </ul>
+
+            </section>
+
+            <section>
+                <h2>Missing Skills</h2>
+
+                <ul>
+                    {% for skill in result.missing %}
+                        <li>{{skill}}</li>
+                    {% else %}
+                        <li>No missing skills found.</li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+        <a href="{{url_for('home')}}">Analyze another resume</a>
+        </main>
+    </body>
+</html>
