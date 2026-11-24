@@ -4,6 +4,8 @@ from analyzer import run_analysis
 
 app = Flask(__name__)
 
+app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024
+
 
 @app.route("/")
 def home():
@@ -29,8 +31,13 @@ def analyze():
         error_message = "Please enter a job description."
         return render_template("index.html", error=error_message)
 
+    # the analyzer processes the two passing arguments and returns a dictionary in result
     result = run_analysis(resume, job_description)
 
+    # render_template() tells flask to:
+    # 1. find the results.html inside the templates folder.
+    # 2. pass the python variable result into that HTML template.
+    # 3. render the template into an HTML response and send it to the browser.
     return render_template("results.html", result=result)
 
 
