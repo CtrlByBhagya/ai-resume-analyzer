@@ -40,6 +40,13 @@ def analyze():
     # 3. render the template into an HTML response and send it to the browser.
     return render_template("results.html", result=result)
 
+@app.errorhandler(413)
+def file_too_large(error):
+    return render_template(
+        "index.html",
+        error = "Your upload is too large. Please upload a file smaller than 5 MB"
+    ) , 413
+
 
 if __name__ == "__main__":
     app.run(debug=True)
