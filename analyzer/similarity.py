@@ -13,7 +13,7 @@ def similarity_score(resume_text, job_text):
 
     # creating an object of the Tfidfvectorizer class
     # a tool created which will convert text into TF-IDF values
-    vectorizer = TfidfVectorizer()
+    vectorizer = TfidfVectorizer(stop_words="english")
 
     # fit_transform() performs two operations:
     # fit: learns the vocabulary and calculates IDF weights.
