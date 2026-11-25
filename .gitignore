@@ -10,3 +10,6 @@ __pycache__/
 
 # Editor settings
 .vscode/
+#testing file and folder
+test_files/
+test_extract.py
